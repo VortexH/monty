@@ -6,13 +6,13 @@ int push(char *string)
 	stack_t *new;
 
 	if (string == NULL)
-		return (4);
+		return (5);
 
 	for(count = 0; isdigit(string[count]) > 0; count++)
 		;
 
 	if (string[count] != 0)
-		return (4);
+		return (5);
 
 	x = atoi(string);
 

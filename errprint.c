@@ -36,5 +36,9 @@ void errprint(int error, int line, char *filename, char *oparg)
 			fprintf(stderr, "L%d: unknown instruction %s\n", line, oparg);
 			exit(EXIT_FAILURE);
 			break;
+		case (5):
+			fprintf(stderr, "L%d: usage: push integer\n", line);
+			exit(EXIT_FAILURE);
+			break;
 	}
 }
