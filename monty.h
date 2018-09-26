@@ -23,8 +23,22 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
-stack_t *head;
+/**
+ * struct errlinearray - contains errorcode, line number, and token array
+ * @errorcode: error code assigned to member when program fails
+ * @line_number: line number where failure occurred
+ * @arr: array of tokens generated after parsing buffer for opcode and value
+ *
+*/
+typedef struct errlinearray
+{
+	int errorcode;
+	unsigned int line_number;
+	char *arr[2];
+} s_ela;
 
+/** Struct has been declared as global **/
+s_ela all;
 
 /**
  * struct instruction_s - opcode and its function
@@ -37,13 +51,13 @@ stack_t *head;
 typedef struct instruction_s
 {
         char *opcode;
-        int (*f)(char *string);
+        void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void buildarray(char *buffer, char **array);
-int push(char *string);
-int pall(char *string);
-void errprint(int error, int line, char *filename, char *oparg);
-int builtins(char **array);
+void buildarray(char *buffer);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void errprint(void);
+void builtins(stack_t **stack);
 
 #endif
