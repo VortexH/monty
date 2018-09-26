@@ -22,6 +22,8 @@ int main(int argc, char **argv)
 		do {
 			buffer = NULL;
 			n = 0;
+			arr[0] = NULL;
+			arr[1] = NULL;
 			check = getline(&buffer, &n, monty);
 			if (buffer == NULL)
 				error = 7;

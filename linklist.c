@@ -5,6 +5,9 @@ int push(char *string)
 	int x, count;
 	stack_t *new;
 
+	if (string == NULL)
+		return (4);
+
 	for(count = 0; isdigit(string[count]) > 0; count++)
 		;
 
