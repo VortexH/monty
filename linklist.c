@@ -33,6 +33,9 @@ int pall(char *string)
 
 	run = head;
 	while (run != NULL)
+	{
 		printf("%i\n", run->n);
+		run = run->prev;
+	}
 	return (0);
 }
