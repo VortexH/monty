@@ -15,7 +15,7 @@ int builtins(array)
 
 	for (count = 0; builtins[count].opcode != NULL; count++)
 	{
-		if ((strcmp(array[0])) == 0)
+		if ((strcmp(array[0], builtins[count].opcode)) == 0)
 			return ((builtins[count].f(array[1])));
 	}
 	return (4);
