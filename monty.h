@@ -35,6 +35,7 @@ typedef struct errlinearray
 	int errorcode;
 	unsigned int line_number;
 	char *arr[2];
+	char **argv;
 } s_ela;
 
 /** Struct has been declared as global **/
@@ -59,5 +60,7 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void errprint(void);
 void builtins(stack_t **stack);
+stack_t *parseAndExec(FILE *monty);
+void freeStack(stack_t *stack);
 
 #endif

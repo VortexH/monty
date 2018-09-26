@@ -1,5 +1,14 @@
 #include "monty.h"
 
+/**
+ * push - pushes opcode arg to the stack
+ *
+ * @stack: doubly linked list representation of the stack
+ * @line_number: line number of the parsed command
+ *
+ * Return: void
+*/
+
 void push(stack_t **stack, unsigned int line_number)
 {
 	int x, count;
@@ -11,7 +20,7 @@ void push(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
-	for(count = 0; isdigit(all.arr[1][count]) > 0; count++)
+	for (count = 0; isdigit(all.arr[1][count]) > 0; count++)
 		;
 
 	if (all.arr[1][count] != '\0')
@@ -36,7 +45,15 @@ void push(stack_t **stack, unsigned int line_number)
 		all.errorcode = 7;
 }
 
-void pall (stack_t **stack, unsigned int line_number)
+/**
+ * pall - prints all elements of the stack
+ *
+ * @stack: doubly linked list representation of the stack
+ * @line_number: line number of the parsed command from .m file
+ *
+ * Return: Void
+*/
+void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *run;
 

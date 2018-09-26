@@ -1,15 +1,29 @@
 #include "monty.h"
 
+/**
+ * main - function that initializes the program
+ *
+ * @argc: number of arguments given to the executable
+ * @argv: array of arguments
+ *
+ * Description: Checks the argument count when running the program,
+ * attempts to find file, opens the file with fopen, passes file stream to
+ * parseAndExec for executing the parsed command or catching an error if the
+ * parsed line has any issues, and frees the stack once monty stream reaches
+ * EOF.
+ *
+ * Return: -1 if any error condition was met. 0, if no errors were met.
+*/
 int main(int argc, char **argv)
 {
-	char *buffer = NULL;
-	stack_t *stack = NULL;
-	size_t n = 0;
-	int line = 0, error = 0, check = 0;
 	FILE *monty = NULL;
+	stack_t *stack;
+	all.argv = argv;
 
 	if (argc != 2 || access(argv[1], F_OK) == -1)
+	{
 		all.errorcode = 9;
+	}
 	else
 	{
 		monty = fopen(argv[1], "r");
@@ -18,33 +32,12 @@ int main(int argc, char **argv)
 	}
 
 	if (all.errorcode == 0)
-	{
-		do {
-			buffer = NULL;
-			n = 0;
-			arr[0] = NULL;
-			arr[1] = NULL;
-			check = getline(&buffer, &n, monty);
-			if (buffer == NULL)
-				all.errorcode = 7;
-			if (check != -1 && all.errorcode == 0)
-			{
-				all.line_number++;
-				buildarray(buffer);
-				builtins(&stack);
-			}
-			errprint();
-			if (buffer != NULL)
-				free(buffer);
-		} while (check != -1 && all.errorcode == 0);
-	}
+		stack = parseAndExec(monty);
 	else
 		errprint();
-	/**
-	if (list != NULL)
-		free(list);
-	if (buffer != NULL)
-		free(buffer);
-	**/
+
+	if (stack != NULL)
+		freeStack(stack);
+
 	return (all.errorcode);
 }

@@ -20,7 +20,7 @@ void errprint(void)
 			break;
 		case (8):
 			fprintf(stderr, "Error: Can't open file %s\n",\
-					argv[1]);
+					all.argv[1]);
 			break;
 		case (7):
 			fprintf(stderr, "Error: malloc failed\n");
@@ -34,4 +34,7 @@ void errprint(void)
 					all.line_number);
 			break;
 	}
+
+	if (all.errorcode != 0)
+		all.errorcode = -1;
 }
