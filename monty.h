@@ -23,7 +23,7 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
-stack_t *head = NULL;
+stack_t *head;
 
 
 /**
@@ -37,7 +37,7 @@ stack_t *head = NULL;
 typedef struct instruction_s
 {
         char *opcode;
-        int (*f)(stack_t **stack, unsigned int line_number);
+        int (*f)(char *string);
 } instruction_t;
 
 void buildarray(char *buffer, char **array);
