@@ -9,7 +9,7 @@
  * Return: Does not return anything
 */
 
-void buildarray(char *buffer, char **array)
+void buildarray(char *buffer)
 {
 	char *token;
 	int i;
@@ -17,7 +17,7 @@ void buildarray(char *buffer, char **array)
 	token = strtok(buffer, " \n");
 	for (i = 0; token != NULL && i < 2; i++)
 	{
-		array[i] = token;
+		all.arr[i] = token;
 		token = strtok(NULL, " \n");
 	}
 }

@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int builtins(char **array)
+void builtins(stack_t **stack)
 {
 	instruction_t builtins[] = {
 		{"push", push},
@@ -18,7 +18,10 @@ int builtins(char **array)
 	for (count = 0; builtins[count].opcode != NULL; count++)
 	{
 		if ((strcmp(array[0], builtins[count].opcode)) == 0)
-			return ((builtins[count].f(array[1])));
+		{
+			builtins[count].f(stack, all.line_number);
+			return;
+		}
 	}
-	return (4);
+	all.errorcode = 4;
 }

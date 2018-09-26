@@ -2,8 +2,8 @@
 
 int main(int argc, char **argv)
 {
-	char *arr[2] = {NULL, NULL};
 	char *buffer = NULL;
+	stack_t *stack = NULL;
 	size_t n = 0;
 	int line = 0, error = 0, check = 0;
 	FILE *monty = NULL;
@@ -26,16 +26,16 @@ int main(int argc, char **argv)
 			arr[1] = NULL;
 			check = getline(&buffer, &n, monty);
 			if (buffer == NULL)
-				error = 7;
-			if (check != -1 && error == 0)
+				all.errorcode = 7;
+			if (check != -1 && all.errorcode == 0)
 			{
-				line++;
-				buildarray(buffer, arr);
-				error = builtins(arr);
+				all.line_number++;
+				buildarray(buffer);
+				builtins(&stack);
 			}
-		} while (check != -1 && error == 0);
+		} while (check != -1 && all.errorcode == 0);
 	}
-	errprint(error, line, argv[1], arr[0]);
+	errprint();
 	/**
 	if (list != NULL)
 		free(list);
