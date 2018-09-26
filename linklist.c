@@ -1,44 +1,49 @@
 #include "monty.h"
 
-int push(char *string)
+void push(stack_t **stack, unsigned int line_number)
 {
 	int x, count;
 	stack_t *new;
 
-	if (string == NULL)
-		return (5);
+	if (all.arr[1] == NULL)
+	{
+		all.errorcode = 5;
+		return;
+	}
 
-	for(count = 0; isdigit(string[count]) > 0; count++)
+	for(count = 0; isdigit(all.arr[1][count]) > 0; count++)
 		;
 
-	if (string[count] != 0)
-		return (5);
+	if (all.arr[1][count] != '\0')
+	{
+		all.errorcode = 5;
+		return;
+	}
 
-	x = atoi(string);
+	x = atoi(all.arr[1]);
 
 	new = malloc(sizeof(stack_t));
 	if (new != NULL)
 	{
 		new->n = x;
-		new->prev = head;
+		new->prev = *stack;
+		if (*stack != NULL)
+			(*stack)->next = new;
 		new->next = NULL;
-		head = new;
-		return(0);
+		*stack = new;
 	}
 	else
-		return (7);
+		all.errorcode = 7;
 }
 
-int pall(char *string)
+void pall (stack_t **stack, unsigned int line_number)
 {
 	stack_t *run;
-	(void)(string);
 
-	run = head;
+	run = *stack;
 	while (run != NULL)
 	{
 		printf("%i\n", run->n);
 		run = run->prev;
 	}
-	return (0);
 }
