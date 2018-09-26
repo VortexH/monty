@@ -2,7 +2,7 @@
 
 int push(char *string)
 {
-	int x;
+	int x, count;
 	stack_t *new;
 
 	for(count = 0; isdigit(string[count]) > 0; count++)
@@ -28,7 +28,9 @@ int push(char *string)
 
 int pall(char *string)
 {
+	stack_t *run;
 	(void)(string);
+
 	run = head;
 	while (run != NULL)
 		printf("%i\n", run->n);

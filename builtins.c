@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int builtins(array)
+int builtins(char **array)
 {
 	instruction_t builtins[] = {
 		{"push", push},

@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 		error = 9;
 	else
 	{
-		monty = fopen(argv[1], r);
+		monty = fopen(argv[1], "r");
 		if (monty == NULL)
 			error = 8;
 	}
@@ -25,18 +25,20 @@ int main(int argc, char **argv)
 			check = getline(&buffer, &n, monty);
 			if (buffer == NULL)
 				error = 7;
-			if (check != -1 && error = 0)
+			if (check != -1 && error == 0)
 			{
 				line++;
 				buildarray(buffer, &arr);
-				error = builtins(array);
+				error = builtins(arr);
 			}
 		} while (check != -1 && error == 0);
 	}
 	error = errprint(error, line, argv[1], arr[0]);
+	/**
 	if (list != NULL)
 		free(list);
 	if (buffer != NULL)
 		free(buffer);
-	return (error)
+	**/
+	return (error);
 }
