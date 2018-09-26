@@ -17,7 +17,7 @@ void buildarray(char *buffer, char **array)
 	token = strtok(buffer, " \n");
 	for (i = 0; token != NULL && i < 2; i++)
 	{
-		*array[i] = token;
+		array[i] = token;
 		token = strtok(NULL, " \n");
 	}
 }

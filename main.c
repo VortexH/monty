@@ -28,12 +28,12 @@ int main(int argc, char **argv)
 			if (check != -1 && error == 0)
 			{
 				line++;
-				buildarray(buffer, &arr);
+				buildarray(buffer, arr);
 				error = builtins(arr);
 			}
 		} while (check != -1 && error == 0);
 	}
-	error = errprint(error, line, argv[1], arr[0]);
+	errprint(error, line, argv[1], arr[0]);
 	/**
 	if (list != NULL)
 		free(list);
