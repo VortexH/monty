@@ -9,15 +9,15 @@ int main(int argc, char **argv)
 	FILE *monty = NULL;
 
 	if (argc != 2 || access(argv[1], F_OK) == -1)
-		error = 9;
+		all.errorcode = 9;
 	else
 	{
 		monty = fopen(argv[1], "r");
 		if (monty == NULL)
-			error = 8;
+			all.errorcode = 8;
 	}
 
-	if (error == 0)
+	if (all.errorcode == 0)
 	{
 		do {
 			buffer = NULL;
@@ -33,14 +33,18 @@ int main(int argc, char **argv)
 				buildarray(buffer);
 				builtins(&stack);
 			}
+			errprint();
+			if (buffer != NULL)
+				free(buffer);
 		} while (check != -1 && all.errorcode == 0);
 	}
-	errprint();
+	else
+		errprint();
 	/**
 	if (list != NULL)
 		free(list);
 	if (buffer != NULL)
 		free(buffer);
 	**/
-	return (error);
+	return (all.errorcode);
 }
