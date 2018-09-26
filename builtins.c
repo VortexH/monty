@@ -13,6 +13,8 @@ int builtins(array)
 		{NULL, NULL},
 	};
 
+	int count;
+
 	for (count = 0; builtins[count].opcode != NULL; count++)
 	{
 		if ((strcmp(array[0], builtins[count].opcode)) == 0)
