@@ -18,5 +18,5 @@ int builtins(array)
 		if ((strcmp(array[0])) == 0)
 			return ((builtins[count].f(array[1])));
 	}
-	return ();
+	return (4);
 }
