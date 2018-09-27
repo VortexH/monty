@@ -20,6 +20,7 @@ void builtins(stack_t **stack)
 		{"swap", swap},
 		{"nop", nop},
 		{"add", add},
+		{"pstr", pstr},
 		{NULL, NULL},
 	};
 
