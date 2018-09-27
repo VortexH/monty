@@ -21,7 +21,8 @@ void builtins(stack_t **stack)
 		{"nop", nop},
 		{"add", add},
 		{"pstr", pstr},
-		{"divop", divop},
+		{"div", _div},
+		{"sub", sub},
 		{NULL, NULL},
 	};
 

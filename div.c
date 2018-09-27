@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * divop - divides the 2ndtop element of the stack by the top element of the
+ * _div - divides the 2ndtop element of the stack by the top element of the
  * stack
  *
  * @stack: doubly linked list representation of the stack
@@ -13,7 +13,7 @@
  * Return: void
 */
 
-void divop(stack_t **stack, unsigned int line_number)
+void _div(stack_t **stack, unsigned int line_number)
 {
 	if (stacklength(*stack) < 2)
 	{

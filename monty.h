@@ -1,25 +1,14 @@
 #ifndef _MONTY_H
 #define _MONTY_H
 
+#define _GNU_SOURCE
+
 #include <ctype.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 
-#define E9 "USAGE: monty file\n"
-#define E8 "Error: Can't open file"
-#define E7 "Error: malloc failed\n"
-#define E4 ": unknown instruction "
-#define E5 ": usage: push integer\n"
-#define E10 ": can't pint, stack empty\n"
-#define E11 ": can't pop an empty stack\n"
-#define E12 ": can't swap, stack too short\n"
-#define E13 ": can't add, stack too short\n"
-#define E14 ": can't div, stack too short\n"
-#define E15 ": division by zero\n"
-
-#define _GNU_SOURCE
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -70,6 +59,21 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct error_array - errorcode and associated strings
+ *
+ * @errorcode: error code
+ * @string1: fprintf string1
+ *
+ * Description: struct containing the errorcode and strings to print to stderr
+*/
+
+typedef struct error_array1
+{
+	int errorcode;
+	char *string1;
+} error_arr1;
+
 void buildarray(char *buffer);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
@@ -79,12 +83,14 @@ void swap(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
-void divop(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
 void errprint(void);
 void builtins(stack_t **stack);
 void parseAndExec(FILE *monty);
 void freeStack(stack_t *stack);
 int intcheck(void);
 int stacklength(stack_t *stack);
+char *errorarray(void);
 
 #endif
