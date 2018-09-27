@@ -15,6 +15,7 @@ void builtins(stack_t **stack)
 	instruction_t builtins[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL},
 	};
 
