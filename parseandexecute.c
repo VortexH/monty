@@ -32,7 +32,6 @@ stack_t *parseAndExec(FILE *monty)
 			all.errorcode = 7;
 		if (check != -1 && all.errorcode == 0)
 		{
-			printf("buffer is %s\n", buffer);
 			all.line_number++;
 			buildarray(buffer);
 			if (all.arr[0] != NULL)

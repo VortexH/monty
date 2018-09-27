@@ -14,15 +14,7 @@
 
 void buildarray(char *buffer)
 {
-	int i;
-
 	all.arr[0] = strtok(buffer, " \n\t");
-	printf("first token %s$\n", all.arr[0]);
 	if (all.arr[0] != NULL)
-	{
 		all.arr[1] = strtok(NULL, " \n\t");
-		printf("second token %s$\n", all.arr[1]);
-	}
-	for (i = 0; i < 2; i++)
-		printf("arr[%d] = %s\n", i, all.arr[i]);
 }
