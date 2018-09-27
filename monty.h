@@ -63,6 +63,7 @@ void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 void errprint(void);
 void builtins(stack_t **stack);
 stack_t *parseAndExec(FILE *monty);
