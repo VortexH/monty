@@ -17,7 +17,7 @@ void sub(stack_t **stack, unsigned int line_number)
 {
 	if (stacklength(*stack) < 2)
 	{
-		all.errorcode = 15;
+		all.errorcode = 16;
 		return;
 	}
 
