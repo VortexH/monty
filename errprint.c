@@ -15,6 +15,10 @@
 #define E7 "Error: malloc failed\n"
 #define E4 ": unknown instruction "
 #define E5 ": usage: push integer\n"
+#define E10 ": can't pint,stack empty\n"
+#define E11 ": can't pop an empty stack\n"
+#define E12 ": can't swap, stack too short\n"
+#define E13 ": can't add, stack too short\n"
 
 void errprint(void)
 {
@@ -39,6 +43,23 @@ void errprint(void)
 			fprintf(stderr, "L%d", all.line_number);
 			fprintf(stderr, E5);
 			break;
+		case (10):
+			fprintf(stderr, "L%d", all.line_number);
+			fprintf(stderr, E10);
+			break;
+		case (11):
+			fprintf(stderr, "L%d", all.line_number);
+			fprintf(stderr, E11);
+			break;
+		case (12):
+			fprintf(stderr, "L%d", all.line_number);
+			fprintf(stderr, E12);
+			break;
+		case (13):
+			fprintf(stderr, "L%d", all.line_number);
+			fprintf(stderr, E13);
+
+
 	}
 
 }

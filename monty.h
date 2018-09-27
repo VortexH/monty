@@ -60,10 +60,12 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 void errprint(void);
 void builtins(stack_t **stack);
 stack_t *parseAndExec(FILE *monty);
 void freeStack(stack_t *stack);
 int intcheck(void);
+int stacklength(stack_t *stack);
 
 #endif
