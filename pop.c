@@ -3,7 +3,7 @@
 /**
  * pop - removes top node from stack
  * @stack: top of stack
- * line_number: current line number in monty file
+ * @line_number: current line number in monty file
  * Description: Removes top node, otherwise sets error in struct if head is
  * NULL.
  */
