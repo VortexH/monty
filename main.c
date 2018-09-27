@@ -45,5 +45,5 @@ int main(int argc, char **argv)
 
 	if (all.errorcode != 0)
 		exit(EXIT_FAILURE);
-	return (all.errorcode);
+	exit(EXIT_SUCCESS);
 }
