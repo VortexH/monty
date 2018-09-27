@@ -25,7 +25,7 @@ void errprint(void)
 			break;
 		case (8):
 			fprintf(stderr, E8);
-			fprintf(stderr, "%s\n", all.argv[1]);
+			fprintf(stderr, " %s\n", all.argv[1]);
 			break;
 		case (7):
 			fprintf(stderr, E7);
