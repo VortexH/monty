@@ -27,6 +27,7 @@ void builtins(stack_t **stack)
 		{"mul", mul},
 		{"rotl", rotl},
 		{"pchar", pchar},
+		{"rotr", rotr},
 		{NULL, NULL},
 	};
 
