@@ -18,7 +18,7 @@ stack_t *parseAndExec(FILE *monty)
 	char *buffer;
 	size_t n;
 	int check;
-	stack_t *stack;
+	stack_t *stack = NULL;
 
 	check = 0;
 	do {
@@ -32,9 +32,11 @@ stack_t *parseAndExec(FILE *monty)
 			all.errorcode = 7;
 		if (check != -1 && all.errorcode == 0)
 		{
+			printf("buffer is %s\n", buffer);
 			all.line_number++;
 			buildarray(buffer);
-			builtins(&stack);
+			if (all.arr[0] != NULL)
+				builtins(&stack);
 		}
 		errprint();
 		if (buffer != NULL)

@@ -27,7 +27,7 @@ void errprint(void)
 			break;
 		case (4):
 			fprintf(stderr, "L%d: unknown instruction %s\n",\
-					all.line_number, all.arr[1]);
+					all.line_number, all.arr[0]);
 			break;
 		case (5):
 			fprintf(stderr, "L%d: usage: push integer\n",\

@@ -11,23 +11,13 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	int x, count;
+	int x;
 	stack_t *new;
 
-	if (all.arr[1] == NULL)
-	{
-		all.errorcode = 5;
-		return;
-	}
+	(void)(line_number);
 
-	for (count = 0; isdigit(all.arr[1][count]) > 0; count++)
-		;
-
-	if (all.arr[1][count] != '\0')
-	{
-		all.errorcode = 5;
+	if (intcheck() != 0)
 		return;
-	}
 
 	x = atoi(all.arr[1]);
 
@@ -56,6 +46,8 @@ void push(stack_t **stack, unsigned int line_number)
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *run;
+
+	(void)(line_number);
 
 	run = *stack;
 	while (run != NULL)

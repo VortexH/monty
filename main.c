@@ -17,7 +17,7 @@
 int main(int argc, char **argv)
 {
 	FILE *monty = NULL;
-	stack_t *stack;
+	stack_t *stack = NULL;
 	all.argv = argv;
 
 	if (argc != 2 || access(argv[1], F_OK) == -1)
@@ -39,5 +39,6 @@ int main(int argc, char **argv)
 	if (stack != NULL)
 		freeStack(stack);
 
+	fclose(monty);
 	return (all.errorcode);
 }

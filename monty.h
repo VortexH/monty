@@ -62,5 +62,6 @@ void errprint(void);
 void builtins(stack_t **stack);
 stack_t *parseAndExec(FILE *monty);
 void freeStack(stack_t *stack);
+int intcheck(void);
 
 #endif
