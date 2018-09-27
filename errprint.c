@@ -17,47 +17,44 @@ void errprint(void)
 	{
 		case (9):
 			fprintf(stderr, E9);
-			break;
+			return;
 		case (8):
 			fprintf(stderr, E8);
 			fprintf(stderr, " %s\n", all.argv[1]);
-			break;
+			return;
 		case (7):
 			fprintf(stderr, E7);
-			break;
+			return;
 		case (4):
 			fprintf(stderr, "L%d", all.line_number);
 			fprintf(stderr, E4);
 			fprintf(stderr, "%s\n", all.arr[0]);
-			break;
+			return;
+	}
+	if (all.errorcode != 0)
+		fprintf(stderr, "L%d", all.line_number);
+	switch (all.errorcode)
+	{
 		case (5):
-			fprintf(stderr, "L%d", all.line_number);
 			fprintf(stderr, E5);
 			break;
 		case (10):
-			fprintf(stderr, "L%d", all.line_number);
 			fprintf(stderr, E10);
 			break;
 		case (11):
-			fprintf(stderr, "L%d", all.line_number);
 			fprintf(stderr, E11);
 			break;
 		case (12):
-			fprintf(stderr, "L%d", all.line_number);
 			fprintf(stderr, E12);
 			break;
 		case (13):
-			fprintf(stderr, "L%d", all.line_number);
 			fprintf(stderr, E13);
 			break;
 		case (14):
-			fprintf(stderr, "L%d", all.line_number);
 			fprintf(stderr, E14);
 			break;
 		case (15):
-			fprintf(stderr, "L%d", all.line_number);
 			fprintf(stderr, E15);
 			break;
 	}
-
 }
