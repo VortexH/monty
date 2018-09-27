@@ -13,7 +13,7 @@
  * Return: stack
 */
 
-stack_t *parseAndExec(FILE *monty)
+void parseAndExec(FILE *monty)
 {
 	char *buffer;
 	size_t n;
@@ -42,5 +42,6 @@ stack_t *parseAndExec(FILE *monty)
 			free(buffer);
 	} while (check != -1 && all.errorcode == 0);
 
-	return (stack);
+	if (stack != NULL)
+		freeStack(stack);
 }

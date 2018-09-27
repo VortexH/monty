@@ -17,7 +17,6 @@
 int main(int argc, char **argv)
 {
 	FILE *monty = NULL;
-	stack_t *stack = NULL;
 
 	all.argv = argv;
 
@@ -33,12 +32,9 @@ int main(int argc, char **argv)
 	}
 
 	if (all.errorcode == 0)
-		stack = parseAndExec(monty);
+		parseAndExec(monty);
 	else
 		errprint();
-
-	if (stack != NULL)
-		freeStack(stack);
 
 	if (monty)
 		fclose(monty);
