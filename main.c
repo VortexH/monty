@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 {
 	FILE *monty = NULL;
 	stack_t *stack = NULL;
+
 	all.argv = argv;
 
 	if (argc != 2 || access(argv[1], F_OK) == -1)
@@ -41,5 +42,8 @@ int main(int argc, char **argv)
 
 	if (monty)
 		fclose(monty);
+
+	if (all.errorcode != 0)
+		exit(EXIT_FAILURE);
 	return (all.errorcode);
 }

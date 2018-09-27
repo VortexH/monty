@@ -4,7 +4,7 @@
  * intcheck - checks if a char string is a 'pure' negative or positive number
  * Description: verifies a string only has digits, and if negative, a '-' at
  * only the beginning.
- * Returns: -1 if not pure, 0 if pure
+ * Return: -1 if not pure, 0 if pure
  */
 
 int intcheck(void)
