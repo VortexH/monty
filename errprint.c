@@ -11,7 +11,7 @@
  *
 */
 #define E9 "Usage: monty file\n"
-#define E8 "Error: can't open file"
+#define E8 "Error: Can't open file"
 #define E7 "Error: malloc failed\n"
 #define E4 ": unknown instruction "
 #define E5 ": usage: push integer\n"
