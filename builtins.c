@@ -23,6 +23,8 @@ void builtins(stack_t **stack)
 		{"pstr", pstr},
 		{"div", _div},
 		{"sub", sub},
+		{"mod", mod},
+		{"mul", mul},
 		{"rotl", rotl},
 		{NULL, NULL},
 	};
