@@ -16,10 +16,9 @@ void pstr(stack_t **stack, unsigned int line_number)
 		run = *stack;
 		while (run != NULL && run->n > 31 && run->n < 127)
 		{
-			fprintf(stdout, "%c\n", run->n);
+			fprintf(stdout, "%c", run->n);
 			run = run->prev;
 		}
 	}
-	else
-		fprintf(stdout, "\n");
+	fprintf(stdout, "\n");
 }
