@@ -32,5 +32,6 @@ void builtins(stack_t **stack)
 			return;
 		}
 	}
-	all.errorcode = 4;
+	if (all.arr[0][0] != '#')
+		all.errorcode = 4;
 }
