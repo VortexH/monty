@@ -10,7 +10,7 @@
  * Return: void
  *
 */
-#define E9 "Usage: monty file\n"
+#define E9 "USAGE: monty file\n"
 #define E8 "Error: Can't open file"
 #define E7 "Error: malloc failed\n"
 #define E4 ": unknown instruction "
