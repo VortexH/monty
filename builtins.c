@@ -19,6 +19,7 @@ void builtins(stack_t **stack)
 		{"pop", pop},
 		{"swap", swap},
 		{"nop", nop},
+		{"add", add},
 		{NULL, NULL},
 	};
 
