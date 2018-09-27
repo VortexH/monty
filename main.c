@@ -39,6 +39,7 @@ int main(int argc, char **argv)
 	if (stack != NULL)
 		freeStack(stack);
 
-	fclose(monty);
+	if (monty)
+		fclose(monty);
 	return (all.errorcode);
 }
