@@ -9,25 +9,24 @@
 
 void rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *current;
+	stack_t *cursor;
+	stack_t *penultimate;
+
 	(void)(line_number);
 
-	if (*stack != NULL)
+	if (stacklength(*stack) > 1)
 	{
-		if ((*stack)->prev != NULL)
-		{
-			current = *stack;
-			while (current->prev != NULL)
-			{
-				current = current->prev;
+		cursor = *stack;
+		while (cursor->prev != NULL)
+			cursor = cursor->prev;
 
-				current->next->prev = current->next->next;
-				current->next->next = current;
-			}
-			current->prev = current->next;
-			current->next = NULL;
+		penultimate = cursor->next;
+		cursor->prev = *stack;
+		cursor->next = NULL;
+		penultimate->prev = NULL;
+		(*stack)->next = cursor;
+		*stack = cursor;
 
-			*stack = current;
-		}
 	}
 }
+
