@@ -47,7 +47,7 @@ void push(stack_t **stack, unsigned int line_number)
 			else
 				*stack = new;
 		}
-}
+	}
 	else
 		all.errorcode = 7;
 }
