@@ -29,7 +29,7 @@ void builtins(stack_t **stack)
 		{"pchar", pchar},
 		{"rotr", rotr},
 		{"stack", sq},
-		{"queue", sq},
+		{"queue", sq0},
 		{NULL, NULL},
 	};
 

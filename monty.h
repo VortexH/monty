@@ -93,6 +93,7 @@ void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
 void sq(stack_t **stack, unsigned int line_number);
+void sq0(stack_t **stack, unsigned int line_number);
 void errprint(void);
 void builtins(stack_t **stack);
 void parseAndExec(FILE *monty);
