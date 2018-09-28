@@ -18,6 +18,9 @@ e.g. `./a.out test.m`
 2. If an opcode doesn't take an argument and an argument has been entered, it is ignored. 
 3. As commands are being parsed by the interpreter, any number of tabs and spaces is ignored and the opcode is executed.
 4. If an error condition has been met, then the interpreter will display an error on the stderr including the line number and exit with the EXIT_FAILURE macro.
+5. If an opcode was spelled incorrectly, then the program returns error code 4 and exits with EXIT_FAILURE.
+
+The format of the stderr message is shown below for reference.
 
 
 ## List of implemented opcodes:
