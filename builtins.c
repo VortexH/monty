@@ -28,6 +28,8 @@ void builtins(stack_t **stack)
 		{"rotl", rotl},
 		{"pchar", pchar},
 		{"rotr", rotr},
+		{"stack", sq},
+		{"queue", sq},
 		{NULL, NULL},
 	};
 

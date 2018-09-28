@@ -29,6 +29,7 @@ typedef struct stack_s
 /**
  * struct errlinearray - contains errorcode, line number, and token array
  * @errorcode: error code assigned to member when program fails
+ * @stack: turns stack mode on or off (1 is stack mode, 0 is queue mode)
  * @line_number: line number where failure occurred
  * @arr: array of tokens generated after parsing buffer for opcode and value
  * @argv: command line argument extern variable
@@ -37,6 +38,7 @@ typedef struct stack_s
 typedef struct errlinearray
 {
 	int errorcode;
+	int stack;
 	unsigned int line_number;
 	char *arr[2];
 	char **argv;
@@ -90,6 +92,7 @@ void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void sq(stack_t **stack, unsigned int line_number);
 void errprint(void);
 void builtins(stack_t **stack);
 void parseAndExec(FILE *monty);

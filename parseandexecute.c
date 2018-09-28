@@ -20,6 +20,8 @@ void parseAndExec(FILE *monty)
 	int check;
 	stack_t *stack = NULL;
 
+	all.stack = 1;
+
 	check = 0;
 	do {
 		buffer = NULL;

@@ -12,7 +12,7 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	int x;
-	stack_t *new;
+	stack_t *new, *run;
 
 	(void)(line_number);
 
@@ -25,12 +25,29 @@ void push(stack_t **stack, unsigned int line_number)
 	if (new != NULL)
 	{
 		new->n = x;
-		new->prev = *stack;
-		if (*stack != NULL)
-			(*stack)->next = new;
-		new->next = NULL;
-		*stack = new;
-	}
+		if (all.stack == 1)
+		{
+			if (*stack != NULL)
+				(*stack)->next = new;
+			new->next = NULL;
+			new->prev = *stack;
+			*stack = new;
+		}
+		else
+		{
+			if (*stack != NULL)
+			{
+				run = *stack;
+				while (run->prev != NULL)
+					run = run->prev;
+				run->prev = new;
+				new->next = run;
+				new->prev = NULL;
+			}
+			else
+				*stack = new;
+		}
+}
 	else
 		all.errorcode = 7;
 }
