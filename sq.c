@@ -17,6 +17,7 @@ void sq(stack_t **stack, unsigned int line_number)
 
 	all.stack = 0;
 
+	if (*stack != NULL)
 	{
 		current = *stack;
 		while (current->prev != NULL)
