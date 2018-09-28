@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 
 	all.argv = argv;
 
-	if (argc != 2 || access(argv[1], F_OK) == -1)
+	if (argc != 2)
 	{
 		all.errorcode = 9;
 	}
