@@ -45,49 +45,49 @@ Opcode | Functionality | Usage| Error Code
 There are 2 files located in the bytecodes/ directory.
 
 1. 000.m
-push 0
-push 1
-push 2
-   push 3
-                pall
-push 4
-push      5
-                    push 6
+push 0  
+push 1  
+push 2  
+   push 3  
+                pall  
+push 4  
+push      5  
+                    push 6  
                     
-     pall
+     pall  
      
 ** output **
-3
-2
-1
-0
-6
-5
-4
-3
-2
-1
-0
+3  
+2  
+1  
+0  
+6  
+5  
+4  
+3  
+2  
+1  
+0  
 
 2. 001.m
-push 0 Push 0 onto the stack
-push 1 Push 1 onto the stack
+push 0 Push 0 onto the stack  
+push 1 Push 1 onto the stack  
 
-push 2
-  push 3
-                    pall
+push 2  
+  push 3  
+                    pall  
                    
                    
                    
-push 4
-   push 5
-      push 6
+push 4  
+   push 5  
+      push 6  
       
 ** output **
-3
-2
-1
-0
+3  
+2  
+1  
+0  
 
 
 ## Error Codes:
