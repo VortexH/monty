@@ -44,7 +44,7 @@ Opcode | Functionality | Usage| Error Code
 ## Examples
 There are 2 files located in the bytecodes/ directory.
 
-**000.m** 
+**000.m**  
 push 0  
 push 1  
 push 2  
@@ -121,6 +121,7 @@ Error Code | Error Message on stderr
 `fprintf(stderr, "L%d: %s\n", line number, error message)`
 
 
+## Authors
 Name | Github Link | Twitter
 -------|---------------|-----
 Brent Janski | https://github.com/talktobrent | https://twitter.com/swcosnow
