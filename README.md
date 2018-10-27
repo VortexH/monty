@@ -44,7 +44,7 @@ Opcode | Functionality | Usage| Error Code
 ## Examples
 There are 2 files located in the bytecodes/ directory.
 
-1. 000.m
+000.m  
 push 0  
 push 1  
 push 2  
@@ -56,7 +56,7 @@ push      5
                     
      pall  
      
-** output **
+** output **  
 3  
 2  
 1  
@@ -69,21 +69,21 @@ push      5
 1  
 0  
 
-2. 001.m
+001.m  
 push 0 Push 0 onto the stack  
 push 1 Push 1 onto the stack  
-
+  
 push 2  
   push 3  
                     pall  
+                     
                    
-                   
-                   
+                     
 push 4  
    push 5  
       push 6  
       
-** output **
+** output **  
 3  
 2  
 1  
