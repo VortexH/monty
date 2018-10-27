@@ -44,7 +44,7 @@ Opcode | Functionality | Usage| Error Code
 ## Examples
 There are 2 files located in the bytecodes/ directory.
 
-000.m  
+**000.m** 
 push 0  
 push 1  
 push 2  
@@ -54,9 +54,9 @@ push 4
 push      5  
                     push 6  
                     
-     pall  
+   pall  
      
-** output **  
+**output**  
 3  
 2  
 1  
@@ -69,7 +69,7 @@ push      5
 1  
 0  
 
-001.m  
+**001.m**  
 push 0 Push 0 onto the stack  
 push 1 Push 1 onto the stack  
   
@@ -83,7 +83,7 @@ push 4
    push 5  
       push 6  
       
-** output **  
+**output**  
 3  
 2  
 1  
@@ -121,13 +121,10 @@ Error Code | Error Message on stderr
 `fprintf(stderr, "L%d: %s\n", line number, error message)`
 
 
-# Authors
-1. Brent Janski @talktobrent
-2. Hemant Heer @VortexH
-
-
-
-
+Name | Github Link | Twitter
+-------|---------------|-----
+Brent Janski | https://github.com/talktobrent | https://twitter.com/swcosnow
+Hemant Heer | https://github.com/VortexH | https://twitter.com/hemant_heer
 
 
 
